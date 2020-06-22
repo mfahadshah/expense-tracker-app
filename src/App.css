@@ -1,43 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-:root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-}
-
-.container {
-  margin: 30px auto;
-  width: 350px;
-}
-
-h1 {
-  letter-spacing: 1px;
-  margin: 0;
-}
-
-h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
-}
-
-h4 {
-  margin: 0;
-  text-transform: uppercase;
+body{
+background: #11998e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .inc-exp-container {
@@ -59,7 +25,7 @@ h4 {
 }
 
 .money {
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
@@ -71,81 +37,51 @@ h4 {
 .money.minus {
   color: #c0392b;
 }
-
-label {
-  display: inline-block;
-  margin: 10px 0;
+.listItem{
+  border-right: 5px solid;
+  border-left: 8px solid;
+  transition-property: all;
+  transition-duration: 0.25s;
 }
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
+.listItem.greenb{
+  border-right-color: #2ecc71;
+  border-left-color: #2ecc71;
 }
-
-.btn {
-  cursor: pointer;
-  background-color: #9c88ff;
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
+.listItem.redb{
+  border-right-color: #f7250e;
+  border-left-color: #f7250e;
 }
-
-.btn:focus,
-.delete-btn:focus {
-  outline: 0;
-}
-
-.list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.list li.plus {
-  border-right: 5px solid #2ecc71;
-}
-
-.list li.minus {
-  border-right: 5px solid #c0392b;
-}
-
-.delete-btn {
-  cursor: pointer;
-  background-color: #e74c3c;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
+.listItem.greenb:hover {
+  border-right: 15px solid #2ecc71;
+  border-left: 1px solid #2ecc71;
+} 
+.listItem.redb:hover {
+  border-right: 15px solid #f7250e;
+  border-left: 1px solid #f7250e;
+} 
+.delete-btn{
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition-property: all;
+  transition-duration: 0.1s;
+}
+.delete-btn:hover{
+transform: scale(1.2,1.2);
+}
+.listItem:hover .delete-btn {
+  opacity: 1;
+}
+#shadowDiv{
+  transition-property: all;
+  transition-duration: 0.25s;
+  border-radius: 41px;
+  border: 5px solid greenyellow;
 }
 
-.list li:hover .delete-btn {
-  opacity: 1;
+@media (min-width:576px){
+#shadowDiv:hover{
+  -webkit-box-shadow: 10px 10px 68px 5px rgba(0,111,255,0.40);
+-moz-box-shadow: 10px 10px 68px 5px rgba(0,111,255,0.40);
+box-shadow: 10px 10px 68px 5px rgba(0,111,255,0.40);
+  transform:translate(0px,-6px)
+}
 }

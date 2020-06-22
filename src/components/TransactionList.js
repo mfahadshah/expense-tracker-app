@@ -1,15 +1,23 @@
 import React, { useContext } from 'react'
 import { Transaction } from './Transaction'
-import {GlobalContext} from '../context/GlobalState'
+import { GlobalContext } from '../context/GlobalState'
+import { MDBListGroup } from "mdbreact";
+
 export const TransactionList = () => {
     const { transactions } = useContext(GlobalContext);
-    //const { transactions }=context;
+    let emptyMsg = "";
+    if (transactions.length === 0) {
+        emptyMsg = "Add Transactions to show in History";
+    }
     return (
         <>
-        <h3>History</h3>
-            <ul className="list">
+            <h3><strong>History</strong></h3>
+            <hr className="w-50" />
+            <strong className="text-primary">{emptyMsg}</strong>
+            
+            <MDBListGroup >
                 {transactions.map(transaction => (<Transaction key={transaction.id} transaction={transaction}/>))}
-            </ul>
+            </MDBListGroup>
         </>
     )
 }
