@@ -16,7 +16,7 @@ export const AddTransaction = () => {
             const newTransaction = {
                 id: Math.floor(Math.random() * 100000000),
                 text,
-                amount: parseInt(Math.abs(amount) * -1)
+                amount: parseFloat(Math.abs(amount) * -1)
             }
             addTransaction(newTransaction);
         }
@@ -24,7 +24,7 @@ export const AddTransaction = () => {
             const newTransaction = {
                 id: Math.floor(Math.random() * 100000000),
                 text,
-                amount: parseInt(Math.abs(amount))
+                amount: parseFloat(Math.abs(amount))
             }
             addTransaction(newTransaction);
         }
